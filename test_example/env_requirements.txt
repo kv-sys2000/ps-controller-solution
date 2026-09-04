@@ -1,0 +1,32 @@
+# Not pip-installable:
+#   * FreeCAD 1.1; set `FREECAD_CMD` env var to its `freecadcmd` binary
+#   * The SolidWorks COM API: Requires a licensed SolidWorks install on Windows,
+#       driven through pywin32
+#   * OpenSCAD (`brew install openscad` / apt `openscad`): tools/render.py
+#       uses it to rasterize STL to PNG
+
+cadquery==2.8.0
+cadquery-ocp==7.9.3.1.1
+numpy==2.2.6
+scipy==1.16.1
+trimesh==4.7.1
+shapely==2.1.2
+networkx==3.6.1
+rtree==1.4.1
+matplotlib==3.11.1
+pillow==12.3.0
+pymupdf==1.28.2
+claude-agent-sdk==0.1.53
+openai==1.100.2
+python-dotenv==1.1.0
+point-cloud-utils==0.34.0
+python-fcl==0.7.0.11
+scikit-image==0.26.0
+manifold3d==3.5.2
+
+# --- Windows only: For SolidWorks -----------------------------------
+# Marker (not a comment) so `pip install -r` skips this line automatically
+# on Linux/macOS instead of erroring -- pywin32 ships no non-Windows wheels.
+pywin32==306; sys_platform == "win32"
+pyyaml==6.0.3
+opencv-python==5.0.0.93
